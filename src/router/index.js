@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import ContactBook from "@/views/ContactBook.vue";
 import NotFound from "@/views/NotFound.vue";
 import ContactEdit from "@/views/ContactEdit.vue";
+import ContactCreate from "@/views/ContactCreate.vue";
 
 const routes = [
   {
@@ -13,7 +14,12 @@ const routes = [
     path: "/contacts/:id",
     name: "contact.edit",
     component: ContactEdit,
-    props: true
+    props: true,
+  },
+  {
+    path: "/contacts",
+    name: "contact.add",
+    component: ContactCreate,
   },
   {
     path: "/:pathMatch(.*)*",
@@ -28,4 +34,3 @@ const router = createRouter({
 });
 
 export default router;
-

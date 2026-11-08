@@ -58,7 +58,7 @@ export default {
 </script>
 
 <template>
-  <Form @submit="submitContact" :validate-on-schema="contactFormSchema">
+  <Form @submit="submitContact" :validationSchema="contactFormSchema">
     <div class="form-group">
       <label for="name">Tên: </label>
       <Field
