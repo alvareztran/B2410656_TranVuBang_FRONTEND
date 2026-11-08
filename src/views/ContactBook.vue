@@ -25,7 +25,7 @@ export default {
     contactStrings() {
       return this.contacts.map((contact) => {
         const { name, email, address, phone } = contact;
-        return [name, email, address, phone].join("");  
+        return [name, email, address, phone].join("");
       });
     },
     filteredContacts() {
@@ -44,7 +44,7 @@ export default {
     },
     filteredContactsCount() {
       return this.contacts.length;
-    }
+    },
   },
   methods: {
     async retrieveContacts() {
@@ -67,12 +67,12 @@ export default {
       }
     },
     goToAddContact() {
-      this.$router.push({ name: "contact.add" })
-    }
+      this.$router.push({ name: "contact.add" });
+    },
   },
   mounted() {
     this.refreshList();
-  }
+  },
 };
 </script>
 
@@ -107,6 +107,14 @@ export default {
           Chi tiết liên hệ
           <i class="fas fa-address-card"></i>
           <ContactCard :contact="activeContact" />
+          <router-link
+            :to="{
+              name: 'contact.edit',
+              params: { id: activeContact._id },
+            }"
+          >
+            <span class="mt-2 badge badge-warning">Hiệu chỉnh</span>
+          </router-link>
         </h4>
       </div>
     </div>
